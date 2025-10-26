@@ -1,57 +1,93 @@
 /* custom property */
-:root {
-	--accent-color: #800000;  /* could also be coded #800 */
+:root{
+  --accent-color:#800000; /* could also be coded #800 */
 }
 
-/* default styles */
-body {
-	font-family: Arial, Helvetica, sans-serif;
-    font-size: 100%;
+/* ===== Reset ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* ===== Base / defaults ===== */
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:100%;
+  width:80%;
+  margin:0 auto;                       /* center the page */
+  border:2px solid var(--accent-color);/* chapter step 8 */
+  background:#fff;
 }
 a:hover, a:focus{
-	font-style: italic;
-	color: var(--accent-color);
+  font-style:italic;
+  color:var(--accent-color);
 }
-h1 {
-	font-size: 150%;
-}
-h2 {
-	font-size: 130%;
-	color: var(--accent-color);
-}
-h3 {
-	font-size: 105%;
+h1{ font-size:150%; }
+h2{ font-size:130%; color:var(--accent-color); }
+h3{ font-size:105%; }
+
+/* Default vertical rhythm (step 5) */
+h1, h2, h3, p, ul{
+  padding:.5em 0;
 }
 
-/* the styles for the header */
-header {
-	& h2 {
-		font-size: 175%;
-		text-indent: 30px;
-	}
-	& h3 {
-		font-size: 130%;
-		font-style: italic;
-		text-indent: 30px;
-	}
-	& img {
-		float: left;
-	}
+/* Default left margin for ULs (step 6) */
+ul{ margin-left:2em; }
+
+/* ===== Header ===== */
+header{
+  border-bottom:2px solid var(--accent-color); /* step 9 */
+  background:linear-gradient(30deg,#f6bb73 0%, #ffffff 30%, #ffffff 65%, #f6bb73 100%); /* step 16 */
+  padding:0 1em;
+}
+header img{
+  float:left;
+  margin:.75em 1em;  /* step 12 */
+  height:80px;
+}
+header h2{
+  font-size:175%;
+  padding-bottom:0;  /* step 12 */
+}
+header h3{
+  font-size:130%;
+  font-style:italic;
+  padding-bottom:1em; /* step 12 */
 }
 
-/* the styles for the main content */
-main {
-	clear: left;
+/* ===== Main ===== */
+main{
+  clear:left;
+  padding:0 1em 1em; /* step 13 */
+}
+main h1{
+  border-top:2px solid var(--accent-color);    /* step 10 */
+  border-bottom:2px solid var(--accent-color); /* step 10 */
+  margin:.5em 0;
+  padding:.5em 0;
+}
+main blockquote{
+  font-style:italic;     /* step 15 */
+  padding:0 .75em;       /* indent via padding (step 15) */
+}
+/* Speaker images (step 17) */
+main img{
+  border:4px double var(--accent-color);
+  border-radius:8px;
+  display:block;
+  margin-bottom:.75em;
 }
 
-/* the styles for the footer */
-footer {
-	& p {
-		text-align: center;
-	}
+/* ===== Footer ===== */
+footer{
+  background:var(--accent-color); /* step 11 */
+}
+footer p{
+  color:#fff;                     /* step 11 */
+  text-align:center;
+  padding:1em 0;                  /* step 14 */
 }
 
-/* CSS class */
-.large {
-	font-size: 125%;
-}
+/* Utility */
+.large{ font-size:125%; }
